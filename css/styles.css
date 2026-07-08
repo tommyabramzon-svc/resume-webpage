@@ -1,0 +1,320 @@
+/* ============================================================
+   Tommy Abramzon — personal site
+   Clean / minimal, fixed intro panel + scrolling content
+   ============================================================ */
+
+:root {
+  --bg:            #fbfaf8;   /* warm off-white */
+  --bg-elevated:   #ffffff;
+  --text:          #1a1a19;
+  --text-muted:    #5f5d57;
+  --text-subtle:   #8f8d85;
+  --accent:        #24435f;   /* muted deep navy */
+  --accent-soft:   #3a6089;
+  --border:        #e8e4db;
+  --tag-bg:        #f1ede4;
+  --tag-border:    #e4dfd3;
+
+  --max:           1180px;
+  --ease:          cubic-bezier(0.22, 1, 0.36, 1);
+
+  --font-body: "Inter", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a { color: inherit; }
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--accent);
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 6px;
+  z-index: 100;
+}
+.skip-link:focus { left: 12px; top: 12px; }
+
+/* ---------- Layout ---------- */
+.layout {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 6vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+/* ---------- Intro / nav panel ---------- */
+.intro {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  max-height: 100vh;
+  display: flex;
+  padding: 6rem 0 4rem;
+}
+.intro-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  max-width: 420px;
+}
+
+.name {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(2.6rem, 5vw, 3.4rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.5rem;
+}
+.role {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--text);
+  margin: 0 0 1rem;
+}
+.tagline {
+  color: var(--text-muted);
+  max-width: 34ch;
+  margin: 0 0 3rem;
+}
+
+/* nav */
+.nav ul { list-style: none; margin: 0; padding: 0; }
+.nav li { margin: 0; }
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 8px 0;
+  text-decoration: none;
+  color: var(--text-subtle);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: color 0.25s var(--ease);
+}
+.nav-line {
+  display: inline-block;
+  height: 1px;
+  width: 28px;
+  background: var(--text-subtle);
+  transition: width 0.28s var(--ease), background 0.28s var(--ease);
+}
+.nav-link:hover,
+.nav-link:focus-visible,
+.nav-link.active { color: var(--text); }
+.nav-link:hover .nav-line,
+.nav-link:focus-visible .nav-line,
+.nav-link.active .nav-line { width: 52px; background: var(--accent); }
+
+/* socials */
+.socials {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 2.5rem 0 0;
+}
+.socials a {
+  color: var(--text-subtle);
+  display: inline-flex;
+  transition: color 0.25s var(--ease), transform 0.25s var(--ease);
+}
+.socials a:hover { color: var(--accent); transform: translateY(-2px); }
+
+/* ---------- Main content ---------- */
+.content {
+  padding: 6rem 0 4rem;
+}
+.section {
+  margin-bottom: 5.5rem;
+  scroll-margin-top: 3rem;
+}
+.section-heading {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1.05rem;
+  letter-spacing: 0.02em;
+  color: var(--text);
+  margin: 0 0 2rem;
+  position: relative;
+  padding-bottom: 0.6rem;
+}
+.section-heading::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: 0;
+  width: 34px; height: 2px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+.prose p { margin: 0 0 1.1rem; color: var(--text-muted); }
+.prose strong { color: var(--text); font-weight: 600; }
+
+/* ---------- Entries (experience / leadership / education) ---------- */
+.entries { list-style: none; margin: 0; padding: 0; }
+
+.entry {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 1.4rem;
+  padding: 1.4rem;
+  margin: 0 -1.4rem 0.6rem;
+  border-radius: 12px;
+  transition: background 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+.entry:hover {
+  background: var(--bg-elevated);
+  box-shadow: 0 1px 0 var(--border), 0 18px 40px -28px rgba(36,67,95,0.35);
+}
+.entry-date {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--text-subtle);
+  padding-top: 0.35rem;
+}
+.entry-title {
+  font-size: 1.02rem;
+  font-weight: 600;
+  margin: 0 0 0.15rem;
+  color: var(--text);
+}
+.entry-title .at { color: var(--text-subtle); font-weight: 400; margin: 0 2px; }
+.entry-title .org { color: var(--accent); }
+.entry-sub {
+  font-size: 0.85rem;
+  color: var(--text-subtle);
+  margin: 0 0 0.85rem;
+}
+
+.bullets { margin: 0; padding: 0; list-style: none; }
+.bullets li {
+  position: relative;
+  padding-left: 1.15rem;
+  margin-bottom: 0.55rem;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+.bullets li::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 0.62em;
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: var(--accent-soft);
+}
+.bullets strong { color: var(--text); font-weight: 600; }
+
+/* education lines */
+.edu-line {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  margin: 0.55rem 0 0;
+}
+.edu-line .label {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-subtle);
+  margin-right: 0.5rem;
+}
+
+/* ---------- Skills / interests ---------- */
+.group-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-subtle);
+  margin: 0 0 0.9rem;
+}
+.group-label:not(:first-child) { margin-top: 2rem; }
+.tags { list-style: none; display: flex; flex-wrap: wrap; gap: 0.6rem; padding: 0; margin: 0; }
+.tags li {
+  background: var(--tag-bg);
+  border: 1px solid var(--tag-border);
+  color: var(--text);
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 0.4rem 0.85rem;
+  border-radius: 999px;
+}
+
+/* ---------- Footer ---------- */
+.footer {
+  border-top: 1px solid var(--border);
+  padding-top: 2rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+.footer a { color: var(--accent); text-decoration: none; }
+.footer a:hover { text-decoration: underline; }
+.colophon { color: var(--text-subtle); font-size: 0.8rem; margin-top: 0.4rem; }
+
+/* ---------- Reveal animation ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+}
+.reveal.is-visible { opacity: 1; transform: none; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 860px) {
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding: 0 7vw;
+  }
+  .intro {
+    position: static;
+    height: auto;
+    max-height: none;
+    padding: 4.5rem 0 2rem;
+  }
+  .intro-inner { max-width: none; }
+  .tagline { margin-bottom: 2rem; }
+  .nav { display: none; }         /* hide the desktop rail on mobile */
+  .socials { margin-top: 1.75rem; }
+  .content { padding: 1rem 0 3rem; }
+  .section { margin-bottom: 4rem; }
+  .entry {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    padding: 1.1rem;
+    margin: 0 -1.1rem 0.4rem;
+  }
+  .entry-date { padding-top: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  * { transition-duration: 0.001ms !important; }
+}
