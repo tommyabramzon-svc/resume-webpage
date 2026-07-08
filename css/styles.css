@@ -171,6 +171,22 @@ a { color: inherit; text-decoration: none; }
 .entry-title { font-size: 1.1rem; font-weight: 600; margin: 0 0 0.15rem; color: var(--text); }
 .entry-org { font-size: 0.9rem; color: var(--accent); font-weight: 500; margin: 0 0 0.95rem; }
 
+/* flagship (featured) entry */
+.entry.entry-feature {
+  background: linear-gradient(180deg, rgba(31, 59, 92, 0.05), rgba(31, 59, 92, 0.015));
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.8rem;
+  margin-bottom: 1rem;
+}
+.entry-feature + .entry { border-top: none; }
+.entry-flag {
+  display: inline-block;
+  font-size: 0.66rem; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase;
+  color: var(--accent); background: rgba(31, 59, 92, 0.09);
+  padding: 0.22rem 0.6rem; border-radius: 4px; margin: 0 0 0.7rem;
+}
+
 .bullets { margin: 0; padding: 0; list-style: none; }
 .bullets li {
   position: relative; padding-left: 1.25rem; margin-bottom: 0.55rem;
