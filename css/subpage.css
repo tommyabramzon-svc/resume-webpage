@@ -1,0 +1,88 @@
+/* ============================================================
+   Subpage / case-study "tour" layout · matches the main site
+   ============================================================ */
+
+/* Top bar */
+.subnav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(255, 255, 255, 0.86);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-soft);
+}
+.subnav-inner {
+  max-width: var(--max); margin: 0 auto; padding: 1rem 6vw;
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+}
+.back-link {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-size: 0.9rem; font-weight: 500; color: var(--text-muted);
+  transition: color 0.2s var(--ease), gap 0.2s var(--ease);
+}
+.back-link:hover { color: var(--accent); gap: 0.7rem; }
+.subnav-name { font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; }
+
+/* Hero */
+.sub-hero {
+  background: var(--bg-soft); border-bottom: 1px solid var(--border-soft);
+}
+.sub-hero-inner { max-width: var(--max); margin: 0 auto; padding: 4.5rem 6vw 3.5rem; }
+.sub-eyebrow {
+  font-size: 0.8rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--text-subtle); margin: 0 0 1rem;
+}
+.sub-title {
+  font-family: var(--font-display); font-weight: 500;
+  font-size: clamp(2.6rem, 6vw, 4rem); letter-spacing: -0.02em; line-height: 1.02; margin: 0 0 0.6rem;
+}
+.sub-sub {
+  font-family: var(--font-display); font-style: italic;
+  font-size: clamp(1.2rem, 2.6vw, 1.6rem); color: var(--text-muted); margin: 0 0 1.9rem;
+}
+.sub-lead p { font-size: 1.05rem; color: var(--text-muted); max-width: 68ch; margin: 0 0 1.1rem; }
+.sub-lead strong { color: var(--text); font-weight: 600; }
+
+.sub-meta {
+  display: flex; flex-wrap: wrap; gap: 2.2rem;
+  margin-top: 2rem; padding-top: 1.8rem; border-top: 1px solid var(--border);
+}
+.sub-meta dt {
+  font-size: 0.68rem; font-weight: 700; letter-spacing: 0.11em; text-transform: uppercase;
+  color: var(--text-subtle); margin: 0 0 0.3rem;
+}
+.sub-meta dd { margin: 0; font-size: 0.95rem; font-weight: 500; color: var(--text); }
+
+/* Tour */
+.tour { max-width: var(--max); margin: 0 auto; padding: 1.5rem 6vw 4rem; }
+.tour-item { padding: 3.2rem 0; border-top: 1px solid var(--border-soft); }
+.tour-item:first-child { border-top: none; }
+.tour-head { display: flex; align-items: baseline; gap: 1rem; margin-bottom: 1rem; }
+.tour-num { font-family: var(--font-display); font-size: 0.9rem; font-weight: 600; color: var(--accent); }
+.tour-item h2 {
+  font-family: var(--font-display); font-weight: 500;
+  font-size: clamp(1.5rem, 3vw, 2rem); letter-spacing: -0.01em; margin: 0;
+}
+.tour-item .lead { font-size: 1.02rem; color: var(--text-muted); max-width: 70ch; margin: 0 0 2rem; }
+.tour-item .lead strong { color: var(--text); font-weight: 600; }
+
+figure.shot { margin: 0; }
+figure.shot img {
+  width: 100%; height: auto; display: block;
+  border: 1px solid var(--border); border-radius: 12px;
+  box-shadow: 0 26px 55px -36px rgba(31, 59, 92, 0.5);
+}
+figure.shot figcaption { font-size: 0.85rem; color: var(--text-subtle); margin-top: 0.75rem; }
+.shot + .shot { margin-top: 1.9rem; }
+
+/* Footer */
+.sub-footer {
+  background: var(--bg-soft); border-top: 1px solid var(--border-soft);
+  padding: 3.5rem 6vw; text-align: center;
+}
+.sub-footer p { color: var(--text-muted); margin: 0 0 1.4rem; max-width: 60ch; margin-left: auto; margin-right: auto; }
+.sub-footer .back-link { justify-content: center; }
+
+@media (max-width: 760px) {
+  .sub-hero-inner { padding: 3.5rem 6vw 2.5rem; }
+  .tour-item { padding: 2.5rem 0; }
+  .sub-meta { gap: 1.4rem; }
+}
