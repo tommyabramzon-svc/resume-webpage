@@ -1,7 +1,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Solvec-AI · Tommy Abramzon</title>
-<meta name="description" content="Solvec-AI: a systematic futures research desk built on a world-class Level-3 order-flow archive and disciplined, pre-registered validation. Co-founded by Tommy Abramzon." />
+<meta name="description" content="Solvec-AI: an autonomous AI trading bot that trades on its own, and the platform we built to run and oversee it. Co-founded by Tommy Abramzon." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -23,16 +23,17 @@
   <div class="sub-hero-inner">
     <p class="sub-eyebrow">Ventures · Solvec-AI</p>
     <h1 class="sub-title">Solvec-AI</h1>
-    <p class="sub-sub">A systematic futures research desk.</p>
+    <p class="sub-sub">An AI trading bot that trades on its own.</p>
     <div class="sub-lead">
-      <p>Solvec-AI is an AI-powered systematic trading venture I co-founded. We built a full research platform on top of a world-class, <strong>~161 GB Level-3 (order-by-order) data archive</strong>, then paired it with a disciplined, pre-registered validation process. The goal is simple to state and hard to earn: find trade setups that genuinely survive honest testing, and refuse to claim an edge that hasn't.</p>
-      <p>As co-founder, I work on the trading side of the desk, shaping the strategy logic and the live execution view that the systematic research is built to validate, alongside a builder who engineers the platform and a fellow trader.</p>
+      <p>Solvec-AI is an AI-powered trading venture I co-founded. At its center is an <strong>autonomous trading bot</strong>: it reads the market in real time, finds high-probability setups, and executes futures trades on behalf of me and my co-founders, with no human pulling the trigger.</p>
+      <p>Around that bot we built a full platform to run and oversee it, one place to watch every trade the bot takes and to review everything behind those decisions: the <strong>data</strong> it draws on, the <strong>strategies</strong> it trades, the <strong>validation</strong> each one has to pass, and the <strong>backtests</strong> that prove it out. The screens below are that oversight layer.</p>
+      <p>As co-founder, I work on the trading side of Solvec, shaping the strategy and execution logic the bot runs on, alongside a builder who engineers the platform and a fellow trader. The bot is currently in rigorous paper and forward-testing before it trades live capital, and we are documenting the build publicly.</p>
     </div>
     <dl class="sub-meta">
       <div><dt>Role</dt><dd>Co-Founder</dd></div>
-      <div><dt>Focus</dt><dd>Systematic futures research</dd></div>
+      <div><dt>Product</dt><dd>Autonomous AI trading bot</dd></div>
       <div><dt>Data</dt><dd>~161 GB Level-3 order flow</dd></div>
-      <div><dt>Status</dt><dd>In active development, documented publicly</dd></div>
+      <div><dt>Status</dt><dd>Paper / forward-testing, documented publicly</dd></div>
     </dl>
   </div>
 </section>
@@ -41,35 +42,35 @@
 <main class="tour" id="tour">
 
   <section class="tour-item reveal">
-    <div class="tour-head"><span class="tour-num">01</span><h2>One desk, many modules</h2></div>
-    <p class="lead">The platform is organized as a single research desk with dedicated modules for data, strategy, validation, crash analysis, a trade library, a live terminal, and backtesting. Everything reports to one honest state: what works, what is next, and what has been ruled out.</p>
+    <div class="tour-head"><span class="tour-num">01</span><h2>Mission control for the bot</h2></div>
+    <p class="lead">The platform is where we run and oversee the bot. It brings the bot's whole world into one view: the trades it is taking, the data it draws on, the strategies it trades, how each strategy was validated, and what has been ruled out. Everything reports to one honest state.</p>
     <figure class="shot">
-      <img src="assets/solvec/overview.jpg" alt="Solvec desk overview showing modules for Overview, Data, Strategy, Committee, Fund, Crash Lab, Trade Library, Terminal, and Backtests." loading="lazy" />
-      <figcaption>The Desk: the platform's home view, summarizing the state of every module.</figcaption>
+      <img src="assets/solvec/overview.jpg" alt="Solvec platform home view with modules for Overview, Data, Strategy, Committee, Fund, Crash Lab, Trade Library, Terminal, and Backtests." loading="lazy" />
+      <figcaption>The home view: every part of the system behind the bot, in one place.</figcaption>
     </figure>
   </section>
 
   <section class="tour-item reveal">
-    <div class="tour-head"><span class="tour-num">02</span><h2>Validation over hype</h2></div>
-    <p class="lead">The core philosophy is intellectual honesty. Roughly <strong>161 GB of raw Level-3 order flow</strong> feeds a process that has forward-walked three strategy candidates, killed eight hypotheses on a pre-registered gate, and studied 157 real trades in a tape study. No result is dressed up: if a candidate has not cleared a clean, forward, out-of-sample test, we say so plainly.</p>
+    <div class="tour-head"><span class="tour-num">02</span><h2>The bot has to earn its trades</h2></div>
+    <p class="lead">Before the bot is allowed to trade a strategy, that strategy has to survive honest, pre-registered testing. Roughly <strong>161 GB of raw Level-3 order flow</strong> feeds a process that has forward-walked three strategy candidates, killed eight hypotheses on a pre-registered gate, and studied 157 real trades. If a strategy has not cleared a clean, forward, out-of-sample test, the bot does not trade it.</p>
     <figure class="shot">
-      <img src="assets/solvec/state.jpg" alt="Fund operating system view: 161 GB archive, 3 candidates forward-walking, 8 hypotheses killed, 157 trades studied, with an honesty statement." loading="lazy" />
-      <figcaption>The state of the desk, stated honestly: the numbers, and exactly what they do and do not claim.</figcaption>
+      <img src="assets/solvec/state.jpg" alt="Operating-system view: 161 GB archive, 3 candidates forward-walking, 8 hypotheses killed, 157 trades studied, with an honesty statement." loading="lazy" />
+      <figcaption>The state of the system, stated honestly: what the bot can trade, and what it cannot yet.</figcaption>
     </figure>
   </section>
 
   <section class="tour-item reveal">
     <div class="tour-head"><span class="tour-num">03</span><h2>Kill on the gate</h2></div>
-    <p class="lead">Every hypothesis is tested against pre-registered statistical gates before it is allowed to survive. Candidates that clear significance and bootstrap testing but fail the strict multiple-testing gate are held back, not promoted. What has survived is an <strong>architecture</strong> rather than a single trigger: a regime-aware, cross-asset, risk-first framework. The exact mechanics stay in-house.</p>
+    <p class="lead">Every strategy the bot might run is tested against pre-registered statistical gates first. Candidates that clear significance and bootstrap testing but fail the strict multiple-testing gate are held back, not promoted. What survives is an <strong>architecture</strong> the bot trades, a regime-aware, cross-asset, risk-first framework, rather than a single fragile trigger. The exact mechanics stay in-house.</p>
     <figure class="shot">
-      <img src="assets/solvec/strategy.jpg" alt="Strategy state: 'Kill on the gate. No grading on a curve.' with an honesty statement and three surviving candidates." loading="lazy" />
+      <img src="assets/solvec/strategy.jpg" alt="Strategy state: 'Kill on the gate. No grading on a curve.' with an honesty statement and surviving candidates." loading="lazy" />
       <figcaption>Strategy state: honest validation, no grading on a curve.</figcaption>
     </figure>
   </section>
 
   <section class="tour-item reveal">
-    <div class="tour-head"><span class="tour-num">04</span><h2>Anatomy of a liquidity crash</h2></div>
-    <p class="lead">Because we own full order-by-order data, we can reconstruct exactly what happened inside a real market event. This teardown of the April 2025 tariff crash rebuilds the S&amp;P (E-mini) order book event by event, exposing what bar charts and standard depth data simply cannot see: true signed order flow, resting-depth evaporation, hidden iceberg refills, and the difference between real aggression and quote noise.</p>
+    <div class="tour-head"><span class="tour-num">04</span><h2>The data the bot sees</h2></div>
+    <p class="lead">The bot's edge comes from data almost no independent desk owns: full order-by-order (Level-3) market data. To show what that data makes visible, this Crash Lab reconstructs the April 2025 tariff crash event by event, exposing what bar charts and standard depth data cannot see: true signed order flow, resting-depth evaporation, hidden iceberg refills, and real aggression versus quote noise. This is the resolution the bot reasons at.</p>
     <figure class="shot">
       <img src="assets/solvec/crashlab.jpg" alt="Crash Lab: Anatomy of a liquidity crash, reconstructed from Solvec's own Level-3 order book." loading="lazy" />
       <figcaption>Crash Lab: what Level-3 data reveals that most tools cannot.</figcaption>
@@ -82,7 +83,7 @@
 
   <section class="tour-item reveal">
     <div class="tour-head"><span class="tour-num">05</span><h2>The dealer-positioning terminal</h2></div>
-    <p class="lead">The terminal is a real-time cockpit for institutional options positioning: net gamma exposure, vanna and charm, implied-volatility skew, dark-pool prints, and live options flow, all in one view. It is used as a regime and context gate, never as a standalone trade trigger.</p>
+    <p class="lead">The terminal is a real-time cockpit for institutional options positioning that both the bot and the team read: net gamma exposure, vanna and charm, implied-volatility skew, dark-pool prints, and live options flow, all in one view. It sets regime and context, never a standalone trade trigger.</p>
     <figure class="shot">
       <img src="assets/solvec/terminal.jpg" alt="Dark dealer-positioning terminal showing net gamma exposure, vanna, charm, IV skew, dark-pool prints and options flow." loading="lazy" />
       <figcaption>Terminal: the dealer-positioning command center.</figcaption>
@@ -91,7 +92,7 @@
 
   <section class="tour-item reveal">
     <div class="tour-head"><span class="tour-num">06</span><h2>Backtest and replay</h2></div>
-    <p class="lead">A dedicated backtest registry and replay terminal lets us plug a strategy in and test it against the historical Level-3 data we own, replaying order flow and volume profile trade by trade. Strict guardrails keep everything research-and-paper only: no live capital sits behind any of it yet.</p>
+    <p class="lead">Before anything reaches the bot, we test it here. The backtest registry and replay terminal plug a strategy in and run it against the historical Level-3 data we own, replaying order flow and volume profile trade by trade. Strict guardrails keep everything research-and-paper only, so no live capital sits behind the bot yet.</p>
     <figure class="shot">
       <img src="assets/solvec/backtest.jpg" alt="Backtest Registry and Replay Terminal for testing strategies against owned historical Level-3 data." loading="lazy" />
       <figcaption>Backtest Registry and Replay Terminal.</figcaption>
@@ -102,7 +103,7 @@
 
 <!-- ===================== FOOTER ===================== -->
 <footer class="sub-footer">
-  <p>Solvec-AI is in active development, and we are documenting the build publicly, milestone by milestone.</p>
+  <p>Solvec-AI is in active development. The bot's build is documented publicly, milestone by milestone.</p>
   <a class="back-link" href="index.html#ventures"><span aria-hidden="true">&larr;</span> Back to résumé</a>
 </footer>
 
