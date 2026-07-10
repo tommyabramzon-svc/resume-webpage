@@ -81,8 +81,73 @@ figure.shot figcaption { font-size: 0.85rem; color: var(--text-subtle); margin-t
 .sub-footer p { color: var(--text-muted); margin: 0 0 1.4rem; max-width: 60ch; margin-left: auto; margin-right: auto; }
 .sub-footer .back-link { justify-content: center; }
 
+/* ---- Feature grid (e.g. CRM capabilities) ---- */
+.feature-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem; margin: 0;
+}
+.feature-card {
+  border: 1px solid var(--border-soft); border-radius: 12px; padding: 1.3rem 1.4rem;
+  background: var(--surface); transition: border-color 0.25s var(--ease), transform 0.25s var(--ease);
+}
+.feature-card:hover { border-color: var(--border); transform: translateY(-2px); }
+.feature-card .fc-num {
+  font-family: var(--font-display); font-size: 0.85rem; font-weight: 600; color: var(--accent);
+}
+.feature-card h3 { font-size: 1rem; font-weight: 600; margin: 0.4rem 0 0.4rem; color: var(--text); }
+.feature-card p { font-size: 0.9rem; color: var(--text-muted); margin: 0; }
+
+/* ---- Pipeline board (abstract, no real data) ---- */
+.board {
+  display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 0.7rem;
+  margin: 2rem 0 0.75rem;
+}
+.board-col { background: var(--bg-soft); border: 1px solid var(--border-soft); border-radius: 10px; padding: 0.7rem; }
+.board-col h4 {
+  font-size: 0.68rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--text-subtle); margin: 0 0 0.6rem; display: flex; justify-content: space-between; align-items: center;
+}
+.board-col h4 .count {
+  background: var(--surface); border: 1px solid var(--border); border-radius: 999px;
+  padding: 0.05rem 0.45rem; font-size: 0.7rem; color: var(--text-muted); letter-spacing: 0;
+}
+.board-card {
+  background: var(--surface); border: 1px solid var(--border-soft); border-radius: 7px;
+  padding: 0.5rem 0.6rem; margin-bottom: 0.5rem;
+}
+.board-card .bc-name { font-size: 0.78rem; font-weight: 600; color: var(--text); }
+.board-card .bc-meta { font-size: 0.68rem; color: var(--text-subtle); margin-top: 2px; }
+.board-col.signed h4 { color: var(--accent); }
+.board-note { font-size: 0.82rem; color: var(--text-subtle); margin: 0.2rem 0 0; }
+
+/* ---- Flow / architecture diagram ---- */
+.flow {
+  display: flex; align-items: stretch; gap: 0; flex-wrap: wrap;
+  margin: 0.5rem 0 1rem; border: 1px solid var(--border-soft); border-radius: 14px;
+  padding: 1.6rem; background: var(--surface);
+}
+.flow-node {
+  flex: 1 1 0; min-width: 150px; text-align: center; padding: 0.4rem 0.8rem;
+}
+.flow-node .fn-badge {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 34px; height: 34px; border-radius: 9px; margin-bottom: 0.7rem;
+  background: var(--bg-soft); border: 1px solid var(--border);
+  font-family: var(--font-display); font-weight: 600; font-size: 0.9rem; color: var(--accent);
+}
+.flow-node h4 { font-size: 0.95rem; font-weight: 600; margin: 0 0 0.35rem; color: var(--text); }
+.flow-node p { font-size: 0.82rem; color: var(--text-muted); margin: 0; line-height: 1.5; }
+.flow-arrow {
+  flex: 0 0 auto; align-self: center; color: var(--text-subtle); font-size: 1.3rem; padding: 0 0.3rem;
+}
+.flow.sync .flow-arrow::after { content: "\21C4"; }   /* bidirectional */
+.flow.steps .flow-arrow::after { content: "\2192"; }   /* forward */
+
 @media (max-width: 760px) {
   .sub-hero-inner { padding: 3.5rem 6vw 2.5rem; }
   .tour-item { padding: 2.5rem 0; }
   .sub-meta { gap: 1.4rem; }
+  .board { grid-template-columns: repeat(2, 1fr); }
+  .flow { flex-direction: column; }
+  .flow-arrow { transform: rotate(90deg); padding: 0.4rem 0; }
 }
